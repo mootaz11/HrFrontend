@@ -1,0 +1,55 @@
+<div *ngIf="!quizStarted && !showscore" class="container">
+    <div class="row">
+      <div class="col-xs-12 board">
+         
+         <div>
+            <h1>start your quiz : {{quizName}}</h1>
+            <button type="button" (click)="startquiz()" class="btn btn-light">start the quiz</button>
+         </div> 
+      </div>   
+    </div>
+  </div>
+  
+
+  <div *ngIf="quizStarted && !showscore" class="container">
+    <div class="row">
+      <div class="col-xs-12 board">
+         
+         <div>
+            <h1>question {{questionNumber-1}} :</h1>
+            <h2>{{question.question}} ?</h2>
+          <div>
+           <h3>
+              <form [formGroup]="checkForm">
+            <mat-form-field mdbValidate>
+                <mat-label>choices </mat-label>
+                <mat-select formControlName="answer">
+                    <mat-option *ngFor="let reponse of question.reponses" [value]="reponse.reponse">
+                      {{reponse.reponse}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+         </form>
+          </h3> 
+          </div> 
+            <button type="button" *ngIf="!submit" (click)="nextQuestion()" class="btn btn-light">check question</button>
+            <button type="button" *ngIf="submit" (click)="submitScore()" class="btn btn-light">submit quiz</button>
+
+         </div> 
+   
+          
+      </div>   
+    </div>
+  </div>
+
+  <div *ngIf="showscore" class="container">
+   <div class="row">
+     <div class="col-xs-12 board">
+        <div>
+           <h1>Well done your score is : {{score}}</h1>
+           <button type="button" routerLink="/user/dashboard" class="btn btn-light">Back to Dashboard to see your statistics</button>
+        </div> 
+     </div>   
+   </div>
+ </div>
+ 

@@ -1,0 +1,77 @@
+<!-- <div class="container ">
+    <mat-toolbar color="primary">
+        <span class="fill-remaining-space align-content-center">registre</span>
+    </mat-toolbar>
+    <mat-card>
+
+        <form [formGroup]="Myform">
+            <mat-card-content>
+                <mat-form-field class="example-full-width ">
+                    <input matInput placeholder="nom" formControlName="nom">
+                </mat-form-field>
+                <p>
+                    <mat-form-field class="example-full-width ">
+                        <input matInput placeholder="prenom" formControlName="prenom">
+                    </mat-form-field>
+                    <p>
+                        <mat-form-field class="example-full-width ">
+                            <input matInput placeholder="Email" formControlName="email">
+                        </mat-form-field>
+                        <p>
+                            <mat-form-field class="example-full-width ">
+                                <input matInput placeholder=" exemple 01/05/1995" formControlName="datedenais">
+                            </mat-form-field>
+                            <p>
+                                <mat-form-field class="example-full-width ">
+                                    <input type="password" matInput placeholder="Password" formControlName="motdepasse">
+                                </mat-form-field>
+                                <p>
+                                    <label>upload your picture </label>
+                                    <p></p>
+                                    <input type="file" placeholder="picture  " (change)="onpictureselected($event)">
+                                    <p>
+                                        <label>upload your cv </label>
+                                        <p></p>
+                                        <input type="file" placeholder="cv " (change)="oncvselected($event)">
+            </mat-card-content>
+            <div class="center">
+                <button mat-stroked-button class="btn-block" (click)="saveuser()">Register</button>
+            </div>
+        </form>
+    </mat-card>
+</div> -->
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="assets/img/Logo.png" id="icon" alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="Myform">
+            <input type="text" id="nom" class="fadeIn second" placeholder="nom" formControlName="nom">
+            <input type="text" id="prenom" class="fadeIn second" placeholder="prenom" formControlName="prenom">
+            <input type="text" id="login" class="fadeIn second" placeholder="Email" formControlName="email">
+            <input type="text" id="datedenais" class="fadeIn second" placeholder="Date de nais Ex-01/02/2000" formControlName="datedenais">
+
+            <input type="password" id="password" class="fadeIn third" formControlName="motdepasse" placeholder="password">
+            <p>
+                <label>upload your picture </label>
+                <p></p>
+                <input type="file" class="file" placeholder="picture  " (change)="onpictureselected($event)">
+                <p>
+                    <label>upload your cv </label>
+                    <p></p>
+                    <input type="file" class="file" placeholder="cv " (change)="oncvselected($event)">
+                    <br>
+                    <br>
+                    <input type="submit" class="fadeIn fourth" value="sign up" (click)="saveuser()">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#" routerLink="/userlogin">already have an account </a>
+
+        </div>

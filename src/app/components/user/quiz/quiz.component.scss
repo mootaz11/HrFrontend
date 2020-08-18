@@ -1,0 +1,48 @@
+#demoFont {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 19px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+html, body {
+    height: 80%;
+  }
+  
+  .container {
+    margin: 10px auto;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .row {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .board {
+
+    margin-top:50px;
+    height: calc(120% - 30px);
+    width: calc(80% - 50px);
+    background-color: #006AFF    ;
+    border: 1px solid black;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  

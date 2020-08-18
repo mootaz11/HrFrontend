@@ -1,0 +1,66 @@
+<main>
+    <div class="center-screen">
+        <section class="form-gradient mb-5">
+            <mat-toolbar color="primary">
+                <span class="fill-remaining-space">demande de conjé</span>
+            </mat-toolbar>
+            <mat-card>
+                <mat-card-header>
+
+                </mat-card-header>
+                <form [formGroup]="myform" class="example-form ">
+                    <mat-card-content>
+                        <mat-form-field color="accent" appearance="fill">
+                            <mat-label>depuis </mat-label>
+                            <input matInput [matDatepicker]="picker1" formControlName="datededebut">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field color="accent" appearance="fill">
+                            <mat-label> jusqu'à</mat-label>
+                            <input matInput [matDatepicker]="picker2" formControlName="datedefin">
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                        </mat-form-field>
+
+                        <p>
+
+                            <mat-form-field class="example-full-width">
+                                <mat-label>cause</mat-label>
+                                <input matInput placeholder="cause" formControlName="cause"> </mat-form-field>
+                            <p>
+
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>detaille</mat-label>
+                                    <textarea matInput placeholder="" formControlName="detaille"></textarea>
+                                </mat-form-field>
+                    </mat-card-content>
+                    <button mat-stroked-button class="btn-block" (click)="onSubmit()">envoyee</button>
+                </form>
+            </mat-card>
+        </section>
+    </div>
+</main>
+<!-- Model success-->
+<div mdbModal #success="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+    <div class="modal-dialog modal-notify modal-success modal-side modal-bottom-right" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">votre demande est en cour de traité</p>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="text-center">
+                    <mdb-icon fas icon="check" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+                </div>
+            </div>
+
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Model success-->

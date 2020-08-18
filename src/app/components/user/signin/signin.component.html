@@ -1,0 +1,46 @@
+<!-- <div class="container">
+    <mat-toolbar color="primary">
+        <span class="fill-remaining-space align-content-center">Log in</span>
+    </mat-toolbar>
+    <mat-card>
+        <mat-card-header>
+
+        </mat-card-header>
+        <form [formGroup]="myform" class="example-form ">
+            <mat-card-content>
+                <mat-form-field class="example-full-width ">
+                    <input matInput placeholder="Username" formControlName="email">
+                </mat-form-field>
+                <p>
+                    <mat-form-field class="example-full-width ">
+                        <input type="password" matInput placeholder="Password" formControlName="motdepasse">
+                    </mat-form-field>
+            </mat-card-content>
+            <button mat-stroked-button class="btn-block" (click)="submit()">Log in</button>
+        </form>
+    </mat-card>
+
+</div> -->
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="assets/img/Logo.png" id="icon" alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="myform">
+            <input type="text" id="login" class="fadeIn second" placeholder="login" formControlName="email">
+            <input type="password" id="password" class="fadeIn third" formControlName="motdepasse" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In" (click)="submit()">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" routerLink="/userregister">Registre</a>
+        </div>
+    </div>
+</div>

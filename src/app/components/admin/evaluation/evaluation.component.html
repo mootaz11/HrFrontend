@@ -1,0 +1,208 @@
+<main>
+    <div class="center-screen">
+        <section class="form-gradient mb-5">
+            <form [formGroup]=myForm2>
+                <mat-card *ngIf="variable">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>enttre the quiz name </mat-label>
+                        <!-- [formControl]="emailFormControl" [errorStateMatcher]="matcher" -->
+                        <p></p>
+                        <p></p>
+
+                        <input matInput placeholder=" name " formControlName="name">
+                        <div *ngIf="name.touched && name.invalid">
+                            <small *ngIf="name.errors.required" class="text-danger">quiz name is required </small>
+                            <small *ngIf="name.errors.invalid" class="text-danger">invalid quiz name  </small>
+                            <small *ngIf="name.errors.minlength" class="text-danger">quiz name must contain 4 characters  </small>
+                        </div>
+                        <p></p>
+                        <p></p>
+                        <button mat-raised-button color="primary" [disabled]="myForm2.invalid" (click)="getthequizname()">Submit</button>
+                        <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                    </mat-form-field>
+                </mat-card>
+            </form>
+            <div *ngIf="!variable">
+                <mat-toolbar color="primary">
+                    <span>table d'evaluation ( Quiz name : {{this.myForm2.value.name}} ) </span>
+                </mat-toolbar>
+                <mat-card>
+                    <!-- Title of an Card -->
+                    <mat-card-title>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <form [formGroup]="myForm">
+                            <!-- (change)="selectedvalue($event)" (change)="fselectedvalue($event)" -->
+                            <mat-tab-group>
+                                <mat-tab label="Question 1 ">
+
+                                    <div id="demoFont">question 1 : </div> <br>
+                                    <br>
+                                    <p></p>
+                                    <p></p>
+                                    <p>
+                                        <select id="k" class="custom-select my-1 mr-sm-2">
+                            <option selected>quiz type </option>
+                            <option value="c">checkboxes</option>
+                            <option value="r">radio button</option>
+                            </select>
+                                        <p>
+                                            <mat-form-field>
+                                                <input matInput placeholder="Question" formControlName="question" required>
+                                                <div *ngIf="question .touched && question.invalid">
+                                                    <small *ngIf="question.errors.required" class="text-danger">question is required </small>
+                                                </div>
+                                            </mat-form-field>
+                                            <p>
+                                                <div>
+                                                    <mat-form-field *ngIf="!truequestion1">
+                                                        <input matInput placeholder="answer" formControlName="answer1" required>
+                                                        <div *ngIf="answer1.touched && answer1.invalid">
+                                                            <small *ngIf="answer1.errors.required" class="text-danger">answer is required </small>
+                                                        </div>
+                                                    </mat-form-field>
+                                                    <mat-form-field *ngIf="truequestion1">
+                                                        <input matInput placeholder="true answer" required formControlName="correctanswer1">
+                                                        <div *ngIf="correctanswer1.touched && correctanswer1.invalid">
+                                                            <small *ngIf="correctanswer1.errors.required" class="text-danger">answer is required </small>
+                                                        </div>
+                                                    </mat-form-field>
+                                                    <input (change)="trueanswer1($event)" class="form-check-input" type="checkbox" id="gridCheck">
+                                                    <label class="form-check-label" for="gridCheck">
+                                            true
+                                            </label>
+                                                </div>
+                                                <p>
+                                                    <div>
+                                                        <mat-form-field *ngIf="!truequestion2">
+                                                            <input matInput placeholder="answer" formControlName="answer2" required>
+
+                                                        </mat-form-field>
+                                                        <mat-form-field *ngIf="truequestion2">
+                                                            <input matInput placeholder="true answer" formControlName="correctanswer2" required>
+                                                            <div *ngIf="correctanswer2.touched && correctanswer2.invalid">
+                                                                <small *ngIf="correctanswer2.errors.required" class="text-danger">answer is required </small>
+                                                            </div>
+                                                        </mat-form-field>
+                                                        <input (change)="trueanswer2($event)" class="form-check-input" type="checkbox" id="gridCheck1">
+                                                        <label class="form-check-label" for="gridCheck1">
+                                                true
+                                                </label>
+                                                    </div>
+                                                    <p>
+                                                        <div>
+                                                            <mat-form-field *ngIf="!truequestion3">
+                                                                <input matInput placeholder="answer" formControlName="answer3" required>
+                                                                <div *ngIf="answer3.touched && answer3.invalid">
+                                                                    <small *ngIf="answer3.errors.required" class="text-danger">answer is required </small>
+                                                                </div>
+                                                            </mat-form-field>
+                                                            <mat-form-field *ngIf="truequestion3">
+                                                                <input matInput placeholder="true answer" formControlName="correctanswer3" required>
+                                                                <div *ngIf="correctanswer3.touched && correctanswer3.invalid">
+                                                                    <small *ngIf="correctanswer3.errors.required" class="text-danger">answer is required </small>
+                                                                </div>
+                                                            </mat-form-field>
+                                                            <input (change)="trueanswer3($event)" class="form-check-input" type="checkbox" id="gridCheck2">
+                                                            <label class="form-check-label" for="gridCheck2">
+                                                    true
+                                                    </label>
+                                                        </div>
+                                                        <p>
+                                                            <p><br>
+                                </mat-tab>
+                                <mat-tab label="Question2"> Content 2 </mat-tab>
+                                <mat-tab label="Question3"> Content 3 </mat-tab>
+                                <mat-tab label="Question4"> Content 4 </mat-tab>
+                                <mat-tab label="Question5"> Content 5 </mat-tab>
+                                <mat-tab label="Question6"> Content 6 </mat-tab>
+                                <mat-tab label="Question7"> Content 7 </mat-tab>
+                                <mat-tab label="Question8"> Content 8 </mat-tab>
+                                <mat-tab label="Question9"> Content 9 </mat-tab>
+                                <mat-tab label="Question10"> Content 10 </mat-tab>
+
+
+                            </mat-tab-group>
+
+                            <button mat-raised-button color="primary" (click)="getqanda()">Submit</button>
+
+
+                            <!-- <div id="demoFont">question 2: </div> <br>
+                                                <br>
+                                                <p></p>
+                                                <p></p>
+                                                <p>
+                                                    <select class="custom-select my-1 mr-sm-2">
+                                            <option selected>quiz type </option>
+                                            <option value="c">checkboxes</option>
+                                            <option value="r">radio button</option>
+                                            </select>
+                                                    <p>
+                                                        <mat-form-field>
+                                                            <input matInput placeholder="Question " required>
+                                                        </mat-form-field>
+                                                        <p>
+                                                            <mat-form-field>
+                                                                <input matInput placeholder="answer" required>
+                                                            </mat-form-field>
+                                                            <p>
+                                                                <mat-form-field>
+                                                                    <input matInput placeholder="answer" required>
+                                                                </mat-form-field>
+                                                                <p>
+                                                                    <mat-form-field>
+                                                                        <input matInput placeholder="answer" required>
+                                                                    </mat-form-field> -->
+
+                            <!-- Model info-->
+
+
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </section>
+    </div>
+</main>
+<!-- Model success-->
+<div mdbModal #success="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+    <div class="modal-dialog modal-notify modal-success modal-side modal-bottom-right" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">quiz was created Successfuly build ur quiz </p>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="text-center">
+                    <mdb-icon fas icon="check" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+                </div>
+            </div>
+
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Model success-->
+<div mdbModal #info="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+    <div class="modal-dialog modal-notify modal-info modal-side modal-bottom-right" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">question was updated successfuly</p>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="text-center">
+                    <mdb-icon fas icon="check" size="4x" class="mb-3 animated rotateIn"></mdb-icon>
+                </div>
+            </div>
+
+        </div>
+        <!--/.Content-->
+    </div>
+</div>

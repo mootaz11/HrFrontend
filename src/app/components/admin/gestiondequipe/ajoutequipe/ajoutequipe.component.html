@@ -1,0 +1,78 @@
+<main>
+    <div class="center-screen">
+        <section class="form-gradient mb-5">
+            <mdb-card>
+
+                <!--Header-->
+                <div class="header purple-gradient">
+
+                    <div class="row d-flex justify-content-center">
+                        <h3 class="white-text mb-0 py-4 font-weight-bold">New Equipe</h3>
+                    </div>
+
+                </div>
+                <!--Header-->
+
+                <mdb-card-body class="mx-4">
+
+                    <form [formGroup]="addEquipeForm" (ngSubmit)="addNewEquipe()">
+                        <div class="md-form">
+                            <mdb-icon fas icon="tag" class="prefix grey-text"></mdb-icon>
+                            <input type="text" mdbValidate id="form106" class="form-control" mdbInput formControlName="name">
+                            <label for="form106">Name</label>
+                            <mdb-error *ngIf="addEquipeForm.get('name')?.invalid && (addEquipeForm.get('name')?.dirty ||addEquipeForm.get('name')?.touched)">saisir le name</mdb-error>
+                            <mdb-success *ngIf="addEquipeForm.get('name')?.valid && (addEquipeForm.get('name')?.dirty || addEquipeForm.get('name')?.touched)"></mdb-success>
+                        </div>
+
+                        <div class="md-form">
+                            <mdb-icon fas icon="clipboard-list" class="prefix grey-text"></mdb-icon>
+                            <mat-form-field mdbValidate>
+                                <mat-label>Team Leader </mat-label>
+                                <mat-select formControlName="teamLeader">
+                                    <mat-option *ngFor="let item of data" [value]="item._id">
+                                        {{item.email}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mdb-error *ngIf="addEquipeForm.get( 'teamLeader')?.invalid && (addEquipeForm.get( 'teamLeader')?.dirty || addEquipeForm.get( 'teamLeader')?.touched) ">saisir votre Team leader</mdb-error>
+                            <mdb-success *ngIf="addEquipeForm.get( 'teamLeader')?.valid && (addEquipeForm.get( 'teamLeader')?.dirty || addEquipeForm.get( 'teamLeader')?.touched) "></mdb-success>
+                        </div>
+
+                        <div class="md-form ">
+                            <mdb-icon fas icon="clipboard-list " class="prefix grey-text "></mdb-icon>
+                            <mat-form-field mdbValidate>
+                                <mat-label>employee </mat-label>
+                                <mat-select formControlName="employee">
+                                    <mat-option *ngFor="let item of data" [value]="item._id">
+                                        {{item.nom}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mdb-error *ngIf="addEquipeForm.get( 'employee')?.invalid && (addEquipeForm.get( 'employee')?.dirty || addEquipeForm.get( 'employee')?.touched) ">saisir les employees</mdb-error>
+                            <mdb-success *ngIf="addEquipeForm.get( 'employee')?.valid && (addEquipeForm.get( 'employee')?.dirty || addEquipeForm.get( 'employee')?.touched) "></mdb-success>
+                        </div>
+
+
+                        <!--Grid row-->
+                        <div class="row d-flex align-items-center mb-3 mt-4 ">
+
+                            <!--Grid column-->
+                            <div class="col-md-12 ">
+                                <div class="text-center ">
+                                    <button type="submit" mdbBtn rounded="true" class="z-depth-1a " [disabled]="addEquipeForm.invalid">Add</button>
+                                    <button type="button" mdbBtn rounded="true" class="z-depth-1a " (click)="init() ">Rest</button>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+                    </form>
+
+                </mdb-card-body>
+
+            </mdb-card>
+            <!--/Form with header-->
+        </section>
+    </div>
+</main>
